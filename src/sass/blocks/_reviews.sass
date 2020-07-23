@@ -13,7 +13,8 @@
         display: flex
         justify-content: space-between
     &__img
-        height: 169px
+        display: block
+        align-self: flex-start
     &__descr
         width: 650px
     &__name
@@ -30,3 +31,24 @@
         font-size: 16px
         font-weight: 400
         margin-top: 19px
+
+@media (max-width:  991px)
+    .reviews
+        &__item
+            justify-content: space-around
+        &__descr
+            width: 550px
+        
+@media (max-width: 767px)
+    .reviews
+        &__item
+            flex-direction: column
+            justify-content: center
+        &__img
+            align-self: center
+        &__descr
+            margin-top: 30px
+            width: 90%
+            align-self: center
+    
+    
