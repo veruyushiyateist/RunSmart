@@ -51,4 +51,31 @@ $(document).ready(function(){
       $('.overlay, #order').fadeIn('slow');
     })
   });
+
+  function valideForms(form) {
+    $(form).validate({
+      rules: {
+        name: "required",
+        phone: "required",
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Введите им'я",
+        email: {
+          required: "We need you email address to contact you",
+          email: "Your email address must be in the format of name@gmail.com" 
+        }
+      }
+    });
+  };
+
+  valideForms('#consultation form');
+  valideForms('#consultation-form');
+  valideForms('#order form');
+
+  $('input[name=phone]').mask("+380 (99) 999-99-99");
+
 });
